@@ -1,38 +1,17 @@
-function tribonacci(n) {
-  if (n > 0) {
-    let arr0 = [];
-    let arr1 = [];
-    for (let i = 0; i < n; i++) {
-      if (i === 0) {
-        arr0.push(0);
-        arr1.push(1);
-      } else if (i === 1) {
-        arr0.push(0);
-        arr1.push(1);
-      } else if (i === 2) {
-        arr0.push(1);
-        arr1.push(1);
-      } else {
-        arr0.push(arr0[i - 3] + arr0[i - 2] + arr0[i - 1]);
-        arr1.push(arr1[i - 3] + arr1[i - 2] + arr1[i - 1]);
-      }
-    }
-    return `The ${n}${numSuffix(n)} number in the Tribonacci sequence is ${
-      arr0[n - 1]
-    } if the sequence begins with 0 or ${
-      arr1[n - 1]
-    } if the sequence begins with 1`;
-  } else return "invald value";
-}
+// Ex4.2 - Tribonacci
+//
+// you need to create a fibonacci function that given a signature array/list, returns the first n elements - signature included of the so seeded sequence.
+// Signature will always contain 3 numbers; n will always be a non-negative number; if n == 0, then return an empty array
 
-function numSuffix(n) {
-  if (n === 1) {
-    return "st";
-  } else if (n === 2) {
-    return "nd";
-  } else if (n == 3) {
-    return "rd";
-  } else {
-    return "th";
+function tribonacci(arr, n) {
+  if (n === 0) return [];
+  else if (n == 1) {
+    return arr.slice(0, 1);
+  } else if (n == 2) {
+    return arr.slice(0, 2);
   }
+  for (let i = 3; i < n; i++) {
+    arr.push(arr[i - 3] + arr[i - 2] + arr[i - 1]);
+  }
+  return arr;
 }
