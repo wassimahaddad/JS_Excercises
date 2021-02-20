@@ -18,7 +18,8 @@
 
 function maskify(str) {
   let mask = "#";
-  mask = mask.repeat(str.length - 4, "#");
-
-  return mask.concat(str.slice(str.length - 4, str.length));
+  if (str.length > 3) {
+    mask = mask.repeat(str.length - 4, "#");
+    return mask.concat(str.slice(str.length - 4, str.length));
+  } else return str;
 }

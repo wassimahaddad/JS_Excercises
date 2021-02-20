@@ -8,7 +8,14 @@
 // toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
 
 function toCamelCase(str) {
-  let arr = str.split("-");
+  let arr = str.split("");
+  if (arr.includes("_")) {
+    arr = str.split("_");
+  } else if (arr.includes("-")) {
+    arr = str.split("-");
+  } else {
+    return "This is not a dash/underscore delimited string";
+  }
   for (let i = 0; i < arr.length; i++) {
     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
   }

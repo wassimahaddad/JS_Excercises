@@ -20,7 +20,7 @@ function myFilter(array, func) {
 function myForEach(array, func) {
   let newArr = [];
   for (let i = 0; i < array.length; i++) {
-    newArr[i] = newArr.push(func(array[i]));
+    newArr.push(func(array[i]));
   }
 }
 
@@ -29,7 +29,7 @@ function myForEach(array, func) {
 function myMap(array, func) {
   let newArr = [];
   for (let i = 0; i < array.length; i++) {
-    newArr[i] = newArr.push(func(array[i]));
+    newArr.push(func(array[i]));
   }
   return newArr;
 }

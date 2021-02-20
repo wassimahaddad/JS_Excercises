@@ -13,20 +13,21 @@
 // toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe"
 
 function toWeirdCase(str) {
-    let words = str.split(" ");
-    console.log(words.length);
-    for (let j = 0; j < words.length; j++) {
-      let letter = words[j].split("");
-      console.log(words[j]);
-  
-      for (let i = 0; i < letter.length; i++) {
-        if (i % 2 == 0) {
-          letter[i] = letter[i].toUpperCase();
-        } else {
-          letter[i] = letter[i].toLowerCase();
-        }
+  let words = str.split(" ");
+  console.log(words.length);
+  for (let j = 0; j < words.length; j++) {
+    let letter = words[j].split("");
+    console.log(words[j]);
+
+    for (let i = 0; i < letter.length; i++) {
+      if (i % 2 == 0) {
+        letter[i] = letter[i].toUpperCase();
+      } else {
+        letter[i] = letter[i].toLowerCase();
       }
-  
-      words[j] = letter.join("");
     }
-    return words.join(" ");
+
+    words[j] = letter.join("");
+  }
+  return words.join(" ");
+}
